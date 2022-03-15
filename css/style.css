@@ -5688,6 +5688,7 @@ ul.hours_links li span:last-child {
 ul.hours_links li>span {
     z-index: 1;
     padding-right: 5px;
+    background-color: #0F2056;
 }
 
 .bgdark ul.hours_links li>span {
