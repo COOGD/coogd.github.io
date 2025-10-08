@@ -118,6 +118,78 @@ body {
   display: flex;
 }
 
+/* -------------------------
+   COOGD stats counter styles
+   ------------------------- */
+.mil-stats-counter {
+  color: #ffffff;
+}
+.mil-stats-counter .mil-stats-inner {
+  align-items: center;
+}
+.mil-stat-item {
+  text-align: center;
+  padding: 40px 20px;
+}
+.mil-stat-number {
+  font-size: 86px;
+  line-height: 1;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.mil-stats-counter .mil-stat-number {
+  position: relative;
+  display: inline-block;
+   padding-left: 0.5em; /* espaço para o + absoluto */
+}
+.mil-stats-counter .mil-stat-number::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.8em; /* tamanho reduzido */
+  line-height: 1;
+}
+
+/* esconder o + para números que não devem mostrar */
+.mil-stat-number.no-plus::before { display: none; }
+.mil-stat-number .mil-stat-suffix {
+  font-size: 28px;
+  vertical-align: super;
+  margin-left: 6px;
+}
+.mil-stat-label {
+  color: rgba(255,255,255,0.85);
+  font-size: 20px;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 992px) {
+  .mil-stat-number { font-size: 64px; }
+  .mil-stats-counter .mil-stat-number::before { font-size: 0.72em; margin-right: 0.18rem; }
+}
+@media screen and (max-width: 576px) {
+  .mil-stat-number { font-size: 40px; }
+  .mil-stats-counter .mil-stat-number::before { font-size: 0.62em; margin-right: 0.12rem; }
+}
+
+/* quando a seção usa container-fluid, controlar padding para alinhar conteúdo */
+.mil-stats-counter .container-fluid {
+  max-width: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+@media screen and (max-width: 992px) {
+  .mil-stats-counter .container-fluid { padding-left: 40px; padding-right: 40px; }
+}
+@media screen and (max-width: 576px) {
+  .mil-stats-counter .container-fluid { padding-left: 20px; padding-right: 20px; }
+}
+
 .mil-vert-between {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3447,6 +3519,19 @@ accordion
   height: 0;
   overflow: hidden;
 }
+/* Normaliza tipografia das respostas do acordeão */
+.mil-accordion-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(0,0,0,0.8);
+  margin: 0 0 20px 0;
+}
+.mil-accordion-content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* alinhar texto das respostas à esquerda */
+.mil-accordion-content { text-align: left; }
 
 /***************************
 
@@ -3525,6 +3610,22 @@ price
   font-size: 6em;
   font-weight: 500;
   animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+/* icons above other services titles */
+.mil-service-card-lg .mil-service-icon {
+  font-size: 34px;
+  color: #000;
+  margin-bottom: 20px;
+  display: block;
+  text-align: left;
+}
+.mil-service-card-lg .mil-service-icon i {
+  transition: transform .25s ease, color .25s ease;
+}
+.mil-service-card-lg:hover .mil-service-icon i {
+  transform: translateY(-4px) scale(1.05);
+  color: #ff9800; /* accent color */
 }
 .mil-404::before {
   content: attr(data-text);
@@ -4228,3 +4329,7 @@ html.is-animating .mil-menu-frame {
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
+
+/* espaçamento específico para logo no rodapé */
+.mil-logo-footer-spacing { display: inline-block; margin-bottom: 14px; }
+@media screen and (max-width: 768px) { .mil-logo-footer-spacing { margin-bottom: 10px; } }

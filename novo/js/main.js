@@ -398,6 +398,56 @@ $(function () {
 
     ***************************/
 
+    /* -----------------------------
+       Stats counter animation
+       ----------------------------- */
+    function animateStatsCounter() {
+        const statItems = document.querySelectorAll('.mil-stat-item');
+        if (!statItems.length) return;
+
+        function runCounter(el) {
+            const numEl = el.querySelector('.mil-stat-number');
+            const target = parseInt(numEl.getAttribute('data-target'), 10) || 0;
+            const duration = 1500; // ms
+            let start = 0;
+            const startTime = performance.now();
+
+            function step(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const value = Math.floor(progress * target);
+                if (numEl.querySelector('.mil-stat-suffix')) {
+                    // keep suffix inside h2
+                    numEl.firstChild && (numEl.firstChild.nodeValue = value);
+                } else {
+                    numEl.textContent = value;
+                }
+                if (progress < 1) requestAnimationFrame(step);
+                else {
+                    // ensure exact final
+                    if (numEl.querySelector('.mil-stat-suffix')) {
+                        numEl.firstChild && (numEl.firstChild.nodeValue = target);
+                    } else numEl.textContent = target;
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        const observer = new IntersectionObserver(function (entries, obs) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.4});
+
+        statItems.forEach(item => observer.observe(item));
+    }
+
+    // init after content ready
+    animateStatsCounter();
+
     const appearance = document.querySelectorAll(".mil-up");
 
     appearance.forEach((section) => {
