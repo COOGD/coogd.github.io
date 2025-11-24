@@ -398,6 +398,41 @@ $(function () {
 
     ***************************/
 
+    /* TubesCursor init (optional external lib) */
+    function randomColors(count) {
+        return new Array(count).fill(0).map(() => "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0'));
+    }
+
+    function initTubesCursor() {
+        if (typeof TubesCursor === 'undefined') {
+            console.warn('TubesCursor library not found. Include the library to enable the canvas animation.');
+            return;
+        }
+
+        var canvasEl = document.getElementById('canvas');
+        if (!canvasEl) return;
+
+        var app = TubesCursor(canvasEl, {
+            tubes: {
+                colors: ['#f967fb', '#53bc28', '#6958d5'],
+                lights: {
+                    intensity: 200,
+                    colors: ['#83f36e', '#fe8a2e', '#ff008a', '#60aed5']
+                }
+            }
+        });
+
+        document.body.addEventListener('click', function () {
+            var colors = randomColors(3);
+            var lightsColors = randomColors(4);
+            app.tubes.setColors(colors);
+            app.tubes.setLightsColors(lightsColors);
+        });
+    }
+
+    // try to init on load
+    document.addEventListener('DOMContentLoaded', initTubesCursor);
+
     /* -----------------------------
        Stats counter animation
        ----------------------------- */

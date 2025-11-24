@@ -1,0 +1,8 @@
+/* Make the about video horizontal on desktop (16:9) and vertical on small screens */
+.mil-about-photo .mil-img-frame { padding-bottom: 0 !important; aspect-ratio: 16 / 9; width: 100%; height: auto; position: relative; }
+.mil-about-photo .mil-img-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* On small screens use a vertical aspect (3:4) to fit mobile better */
+@media (max-width: 768px) {
+  .mil-about-photo .mil-img-frame { aspect-ratio: 3 / 4; }
+}
