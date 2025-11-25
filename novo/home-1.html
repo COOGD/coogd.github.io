@@ -23,6 +23,40 @@
     <!-- page name -->
     <title>COOGD</title>
 
+    <style>
+        /* Push banner titles down so they don't stick to the top */
+        .mil-banner{ position: relative; overflow: hidden; }
+        .mil-banner .mil-banner-content{
+            padding-top: 210px;
+            padding-bottom: 50px;
+            position: relative; /* create stacking context for content */
+            z-index: 2;
+        }
+        /* Dark overlay to make text stand out */
+        .mil-banner .mil-gradient{
+            position: absolute;
+            inset: 0; /* top:0; right:0; bottom:0; left:0; */
+            background: rgba(0, 0, 0, 0.76);
+            z-index: 1;
+            pointer-events: none;
+        }
+        @media (max-width: 1200px){
+            .mil-banner .mil-banner-content{ padding-top: 220px; }
+        }
+        @media (max-width: 768px){
+            .mil-banner .mil-banner-content{ padding-top: 180px; }
+            .mil-banner .mil-gradient{ background: rgba(0, 0, 0, 0.76);}
+        }
+            /* Force menu (hamburger) lines to white so icon matches text */
+            .mil-menu-btn span,
+            .mil-menu-btn span::before,
+            .mil-menu-btn span::after{
+                background-color: #fff !important;
+            }
+            /* If icon uses stroke or color on SVG, ensure it becomes white */
+            .mil-menu-btn svg{ color: #fff !important; stroke: #fff !important; }
+    </style>
+
 </head>
 
 <body>
@@ -86,7 +120,7 @@
                             <nav class="mil-main-menu" id="swupMenu">
                                 <ul>
                                     <li class="mil-has-children mil-active">
-                                        <a href="#.">COOGD ENERGY</a>
+                                        <a href="#.">COOGD - COOPERATIVA DE ENERGIA</a>
                                         <ul>
                                             <li><a href="home-1.html">Landing page</a></li>
                                             <li><a href="home-2.html">Personal</a></li>
@@ -232,7 +266,7 @@
 
                 <!-- banner -->
                 <section class="mil-banner"
-                    style="background-image: url('img/photo/1.jpg'); background-size: cover; background-position: center;">
+                    style="background-image: url('img/partners/Capa.webp'); background-size: cover; background-position: center;">
                     <div class="mi-invert-fix">
 
                         <div class="mil-gradient"></div>
@@ -240,7 +274,7 @@
                         <div class="container">
                             <div class="mil-banner-content mil-up">
 
-                                <h1 class="mil-muted mil-mb-60">Contribua <span class="mil-thin">para um</span><br>
+                                <h1 class="mil-muted mil-mb-90">Contribua <span class="mil-thin">para um</span><br>
                                     Mundo <span class="mil-thin">+sustentável</span></h1>
                                 <div class="row">
                                     <div class="col-md-7 col-lg-5">
@@ -305,7 +339,7 @@
 
                                     <div class="mil-about-quote">
                                         <div class="mil-avatar mil-up">
-                                            <img src="img/faces/customers/2.jpg" alt="Founder">
+                                            <img src="img/partners/favicon.png" alt="logo">
                                         </div>
                                         <h6 class="mil-quote mil-up">Gerando energia <span class="mil-thin">com
                                                 propósito</span> Sustentabilidade <span class="mil-thin">que
@@ -314,11 +348,11 @@
                                 </div>
 
                             </div>
-                            <div class="col-lg-5">
+                            <div class="col-lg-6">
 
                                 <div class="mil-about-photo mil-mb-90">
                                     <div class="mil-lines-place"></div>
-                                    <div class="mil-up mil-img-frame" style="padding-bottom:56.25%; aspect-ratio:16/9; position:relative;">
+                                    <div class="mil-up mil-img-frame" style="padding-bottom:30.25%; aspect-ratio:16/9; position:relative;">
                                         <video autoplay muted loop playsinline class="mil-scale" data-value-1="1" data-value-2="1.2" style="width:100%; height:100%; object-fit:cover; display:block;">
                                             <source src="../video/COOGD.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
