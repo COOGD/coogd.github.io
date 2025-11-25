@@ -122,7 +122,7 @@ body {
    COOGD stats counter styles
    ------------------------- */
 .mil-stats-counter {
-  color: #ffffff;
+  color: #000000;
 }
 .mil-stats-counter .mil-stats-inner {
   align-items: center;
@@ -135,7 +135,7 @@ body {
   font-size: 86px;
   line-height: 1;
   font-weight: 500;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 16px;
 }
 .mil-stats-counter .mil-stat-number {
@@ -149,7 +149,7 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  color: #ffffff;
+  color: #000000;
   font-weight: 600;
   font-size: 0.8em; /* tamanho reduzido */
   line-height: 1;
@@ -163,7 +163,7 @@ body {
   margin-left: 6px;
 }
 .mil-stat-label {
-  color: rgba(255,255,255,0.85);
+  color: rgba(0, 0, 0, 0.85);
   font-size: 20px;
   margin-top: 6px;
 }
@@ -548,7 +548,6 @@ a {
 
 .mil-img-frame {
   position: relative;
-  overflow: hidden;
   width: 100%;
   padding-bottom: 140%;
 }
