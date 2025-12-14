@@ -2451,6 +2451,13 @@ services
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+  /* remove truncation so full text becomes visible on hover */
+  overflow: visible;
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+  max-height: none;
 }
 .mil-service-card-sm:hover .mil-button {
   -webkit-transform: scale(1);

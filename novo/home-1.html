@@ -103,6 +103,35 @@
             .mil-stats-counter .col-lg-3{ flex: 0 0 100% !important; max-width: 100% !important; }
             .mil-stats-counter .mil-stat-number{ font-size: clamp(28px, 9.5vw, 56px); }
         }
+        /* Number button for service cards */
+        .mil-number-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 40px;
+            border-radius: 100%;
+            background: #111;
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1;
+            transition: background .18s ease, color .18s ease, transform .18s ease;
+        }
+        .mil-number-button.mil-arrow-place,
+        .mil-number-button.mil-icon-button-sm {
+            background-image: none !important;
+            background-size: auto !important;
+            background-position: center !important;
+        }
+        /* hover: change number background to site yellow and text to dark for contrast */
+        .mil-service-card-sm:hover .mil-number-button,
+        .mil-services-grid-item:hover .mil-number-button,
+        .mil-service-card-sm:focus .mil-number-button {
+            background: var(--yellow, #ffc107);
+            color: #111;
+            transform: translateY(-2px);
+        }
     </style>
 
 </head>
@@ -440,7 +469,7 @@
 
                                 <div class="mil-complex-text justify-content-center mil-up mil-mb-15">
 
-                                    <span class="mil-text-image"><img src="img/photo/2.jpg" alt="team"></span>
+                                    <span class="mil-text-image"><img src="img/photo/Equipe.webp" alt="Equipe"></span>
                                     <h2 class="mil-h1 mil-muted mil-center">Saiba <span class="mil-thin">como</span>
                                     </h2>
 
@@ -463,7 +492,7 @@
                                         </h5>
                                         <p class="mil-light-soft mil-mb-30">Neste primeiro passo é necessário apenas uma
                                             cópia da sua fatura de energia para análise.</p>
-                                        <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
+                                        <div class="mil-button mil-icon-button-sm mil-number-button">1</div>
                                     </a>
 
                                 </div>
@@ -474,7 +503,7 @@
                                         <p class="mil-light-soft mil-mb-30">Após a análise e a apresentação da
                                             possibilidade de economia, o titular da conta confirma por e-mail se
                                             pretende aderir à COOGD.</p>
-                                        <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
+                                        <div class="mil-button mil-icon-button-sm mil-number-button">2</div>
                                     </a>
 
                                 </div>
@@ -486,7 +515,7 @@
                                         <p class="mil-light-soft mil-mb-30">Após ser autorizado pela Concessionária de
                                             Energia do Estado, os créditos de geração serão injetados pelas usinas COOGD
                                             na unidade consumidora cadastrada pelo cooperado.</p>
-                                        <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
+                                        <div class="mil-button mil-icon-button-sm mil-number-button">3</div>
                                     </a>
 
                                 </div>
@@ -496,7 +525,7 @@
                                         <h5 class="mil-muted mil-mb-30">Economia e Sustentabilidade <br></h5>
                                         <p class="mil-light-soft mil-mb-30">Este é o passo final, onde você terá energia
                                             de qualidade chegando na sua casa ou empresa.</p>
-                                        <div class="mil-button mil-icon-button-sm mil-arrow-place"></div>
+                                        <div class="mil-button mil-icon-button-sm mil-number-button">4</div>
                                     </a>
 
                                 </div>
@@ -527,7 +556,7 @@
                         <div class="mil-revi-pagination mil-up mil-mb-60"></div>
 
                         <div class="row mil-relative justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-5">
 
                                 <div class="mil-slider-nav mil-soft mil-reviews-nav mil-up">
                                     <div class="mil-slider-arrow mil-prev mil-revi-prev mil-arrow-place"></div>
@@ -546,85 +575,76 @@
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200"
                                                 data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Carla Coelho</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Empresária</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their
-                                                    exceptional talent and expertise. Their ability to think outside the
-                                                    box and bring unique ideas to life is truly impressive. With
-                                                    meticulous attention to detail, they consistently deliver visually
-                                                    stunning and impactful work.</p>
+                                                <h5 class="mil-up mil-mb-10">João Marcos Ferreira</h5>
+                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Empresário</p>
+                                                <p class="mil-text-xl mil-up">A COOGD trouxe para minha empresa 
+                                                    um atendimento diferenciado, direto e transparente. Sempre 
+                                                    que precisei, fui atendido com rapidez e clareza.</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200"
                                                 data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Pedro Costa</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Professor</p>
-                                                <p class="mil-text-xl mil-up">I had the pleasure of working with this
-                                                    creative agency, and I must say, they truly impressed me. They
-                                                    consistently think outside the box, resulting in impressive and
-                                                    impactful work. I highly recommend this agency for their consistent
-                                                    delivery of exceptional creative solutions.</p>
+                                                <h5 class="mil-up mil-mb-10">André Luiz Carvalho</h5>
+                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Comerciante</p>
+                                                <p class="mil-text-xl mil-up">Depois de anos enfrentando instabilidade 
+                                                    e atendimento demorado de outras distribuidoras, mudar para a COOGD 
+                                                    foi uma decisão acertada. A qualidade melhorou e o suporte é muito mais 
+                                                    humano. A cooperativa trabalha com seriedade e foco no cooperado.</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200"
                                                 data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Patrícia Carvalho</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Maquiadora</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their
-                                                    exceptional talent and expertise. Their ability to think outside the
-                                                    box and bring unique ideas to life is truly impressive. With
-                                                    meticulous attention to detail, they consistently deliver visually
-                                                    stunning and impactful work.</p>
+                                                <h5 class="mil-up mil-mb-10">Rosivaldo Batista da Silva</h5>
+                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Empresário</p>
+                                                <p class="mil-text-xl mil-up">Sou cooperado da COOGD há mais de cinco 
+                                                    anos e acompanhei de perto o crescimento da instituição. Vejo transparência, 
+                                                    profissionalismo e compromisso com os cooperados. A cooperativa tem 
+                                                    se destacado não apenas pela qualidade da energia, mas pela forma 
+                                                    como envolve a comunidade nas decisões e nos resultados.</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200"
                                                 data-swiper-parallax-opacity="0">
                                                 <h5 class="mil-up mil-mb-10">João Oliveira</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Empresário</p>
-                                                <p class="mil-text-xl mil-up">I had the pleasure of working with this
-                                                    creative agency, and I must say, they truly impressed me. They
-                                                    consistently think outside the box, resulting in impressive and
-                                                    impactful work. I highly recommend this agency for their consistent
-                                                    delivery of exceptional creative solutions.</p>
+                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Gerente de Operações</p>
+                                                <p class="mil-text-xl mil-up">Quem trabalha com produção sabe que ficar 
+                                                    sem energia por alguns minutos já gera prejuízo. Antes de entrar para a COOGD, 
+                                                    era comum termos que parar a linha no meio do dia. Depois que migramos, 
+                                                    a estabilidade melhorou muito.</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200"
                                                 data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Luana Melo</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Designer</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their
-                                                    exceptional talent and expertise. Their ability to think outside the
-                                                    box and bring unique ideas to life is truly impressive. With
-                                                    meticulous attention to detail, they consistently deliver visually
-                                                    stunning and impactful work.</p>
+                                                <h5 class="mil-up mil-mb-10">Silvana Oliveira</h5>
+                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Dona de Padaria</p>
+                                                <p class="mil-text-xl mil-up">A padaria começa cedo e precisa de estabilidade 
+                                                    nos fornos e refrigeradores. Já perdi massa fermentada por causa de queda de 
+                                                    energia no passado. Com a COOGD, o funcionamento é mais estável e o atendimento 
+                                                    é direto, sem burocracia exagerada.</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200"
                                                 data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Claudio Sousa</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Empresário</p>
-                                                <p class="mil-text-xl mil-up">I had the pleasure of working with this
-                                                    creative agency, and I must say, they truly impressed me. They
-                                                    consistently think outside the box, resulting in impressive and
-                                                    impactful work. I highly recommend this agency for their consistent
-                                                    delivery of exceptional creative solutions.</p>
+                                                <h5 class="mil-up mil-mb-10">Maria Helena dos Santos</h5>
+                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Agricultora Familiar</p>
+                                                <p class="mil-text-xl mil-up">Minha família depende de energia estável para 
+                                                    manter a produção de laticínios. Com a COOGD, finalmente deixamos de enfrentar 
+                                                    interrupções constantes que prejudicavam nossa rotina.</p>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="mil-review-frame mil-center" data-swiper-parallax="-200"
                                                 data-swiper-parallax-opacity="0">
-                                                <h5 class="mil-up mil-mb-10">Paulo Silva</h5>
-                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Vendedor</p>
-                                                <p class="mil-text-xl mil-up">This creative agency stands out with their
-                                                    exceptional talent and expertise. Their ability to think outside the
-                                                    box and bring unique ideas to life is truly impressive. With
-                                                    meticulous attention to detail, they consistently deliver visually
-                                                    stunning and impactful work.</p>
+                                                <h5 class="mil-up mil-mb-10">Samuel Xavier</h5>
+                                                <p class="mil-mb-5 mil-upper mil-up mil-mb-30">Proprietário de Gráfica</p>
+                                                <p class="mil-text-xl mil-up">Equipamentos gráficos são caros e sensíveis. 
+                                                    Depois que me associei à COOGD, esse risco diminuiu bastante. A rede 
+                                                    ficou mais confiável e eles sempre avisam com antecedência quando há manutenção.</p>
                                             </div>
                                         </div>
                                     </div>
