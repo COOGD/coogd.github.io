@@ -78,30 +78,30 @@
             stroke: #fff !important;
         }
         /* Stats counter: keep inside site width and moderate number size */
-        .mil-stats-counter .mil-stat-item{ text-align: center; padding: 30px 20px; }
+        .mil-stats-counter .mil-stat-item{ text-align: center; padding: 28px 12px; }
         .mil-stats-counter .mil-stat-number{
-            font-size: clamp(40px, 7.5vw, 96px);
+            font-size: 48px;
             line-height: 1;
             font-weight: 700;
             margin: 0 0 12px;
         }
-        .mil-stats-counter .mil-stat-label{ font-size: 15px; opacity: .85; }
-        /* Override Bootstrap col-* widths to make stat items flex equally */
-        .mil-stats-counter .col-md-6,
-        .mil-stats-counter .col-lg-7{
-            flex: 1 1 0 !important;
-            max-width: none !important;
+        .mil-stats-counter .mil-stat-label{ font-size: 14px; opacity: .85; }
+        /* Add explicit gaps between stat items so blocks aren't colapsed */
+        .mil-stats-counter .mil-stats-inner{
+            column-gap: 40px;
+            row-gap: 24px;
+            gap: 24px 40px;
         }
+        /* Use normal Bootstrap column behavior so items can sit side-by-side */
         @media (max-width: 992px){
-            /* Tablets: keep full width */
-            .mil-stats-counter .col-md-6,
-            .mil-stats-counter .col-lg-3{ flex: 1 1 0 !important; max-width: none !important; }
+            /* Tablets: slightly smaller numbers and reduced horizontal gap */
+            .mil-stats-counter .mil-stat-number{ font-size: 36px; }
+            .mil-stats-counter .mil-stats-inner{ column-gap: 28px; gap: 20px 28px; }
         }
         @media (max-width: 576px){
-            /* Mobile: stack vertically */
-            .mil-stats-counter .col-md-6,
-            .mil-stats-counter .col-lg-3{ flex: 0 0 100% !important; max-width: 100% !important; }
-            .mil-stats-counter .mil-stat-number{ font-size: clamp(28px, 9.5vw, 56px); }
+            /* Mobile: stack vertically and use compact numbers */
+            .mil-stats-counter .mil-stat-number{ font-size: 28px; }
+            .mil-stats-counter .mil-stats-inner{ column-gap: 0; gap: 12px 0; }
         }
         /* Number button for service cards */
         .mil-number-button {
@@ -718,7 +718,7 @@
                 <section id="service">
                     <div class="container mil-p-120-90">
                         <div class="row justify-content-between">
-                            <div class="col-lg-4 mil-relative mil-mb-90">
+                            <div class="col-lg-5 mil-relative mil-mb-90">
 
                                 <h2 class="mil-up mil-mb-30">Benefícios que você <br>receberá</h2>
                                 <p class="mil-up mil-mb-30">Na COOGD, adotamos uma abordagem única para soluções
@@ -843,28 +843,28 @@
                         <div class="mi-invert-fix">
                             <div class="mil-animation-frame">
                                 <div class="mil-animation mil-position-1 mil-scale" data-value-1="2.4" data-value-2="1.4"
-                                    style="top: 300px; right: -100px"></div>
+                                    style="top: 300px; right: 100px"></div>
                                 <div class="mil-animation mil-position-2 mil-scale" data-value-1="2" data-value-2="1"
                                     style="left: 150px"></div>
                             </div>
                             <div>
                                 <section class="mil-stats-counter">
-                                    <div class="container mil-p-100-100">
+                                    <div class="container mil-p-100-120">
                                         <div class="row justify-content-between align-items-center mil-stats-inner">
-                                            <div class="col-md-6 col-lg-7 mil-stat-item">
+                                            <div class="col-6 col-md-3 mil-stat-item">
                                                 <h2 class="mil-stat-number no-plus" data-target="2016">0</h2>
                                                 <p class="mil-stat-label">Criado em</p>
                                             </div>
-                                            <div class="col-md-6 col-lg-7 mil-stat-item">
+                                            <div class="col-6 col-md-3 mil-stat-item">
                                                 <h2 class="mil-stat-number" data-target="700">0</h2>
                                                 <p class="mil-stat-label">Clientes Satisfeitos</p>
                                             </div>
-                                            <div class="col-md-6 col-lg-7 mil-stat-item">
+                                            <div class="col-6 col-md-3 mil-stat-item">
                                                 <h2 class="mil-stat-number" data-target="12000000">0<span class="mil-stat-suffix">Kw</span>
                                                 </h2>
                                                 <p class="mil-stat-label">Capacidade instalada</p>
                                             </div>
-                                            <div class="col-md-6 col-lg-7 mil-stat-item">
+                                            <div class="col-6 col-md-3 mil-stat-item">
                                                 <h2 class="mil-stat-number" data-target="14">0</h2>
                                                 <p class="mil-stat-label">Milhões Poupados</p>
                                             </div>
@@ -898,7 +898,7 @@
                                     <div class="mil-service-icon"><i class="fas fa-solar-panel" aria-hidden="true"></i>
                                     </div>
                                     <h4 class="mil-up mil-mb-30">Geração de <br>Energia limpa</h4>
-                                    <p class="mil-descr mil-up mil-mb-30">A COODG administra usinas 100% renováveis,
+                                    <p class="mil-descr mil-up mil-mb-30">A COOGD administra usinas 100% renováveis,
                                         disponibilizando seu uso para pessoas físicas e jurídicas. Por meio desse
                                         modelo, gerenciamos a produção e o rateio da energia, oferecendo uma alternativa
                                         sustentável para quem deseja reduzir os custos na conta de luz.</p>
@@ -931,7 +931,7 @@
                                 <a href="#" class="mil-service-card-lg mil-other-card mil-mb-30">
                                     <div class="mil-service-icon"><i class="fas fa-wallet" aria-hidden="true"></i></div>
                                     <h4 class="mil-up mil-mb-30">Você paga menos <br>Na sua conta de luz</h4>
-                                    <p class="mil-descr mil-up mil-mb-30">Os cooperados da COODG utilizam esses créditos
+                                    <p class="mil-descr mil-up mil-mb-30">Os cooperados da COOGD utilizam esses créditos
                                         para diminuir suas contas de luz, garantindo economia real e sustentável mês a
                                         mês.</p>
                                     <ul class="mil-service-list mil-dark mil-mb-30">
@@ -1046,26 +1046,12 @@
                                     </form>
 
                                 </div>
-                                <div class="col-md-7 col-lg-6">
+                                <div class="col-md-6 col-lg-6">
                                     <div class="row justify-content-end">
                                         <div class="col-md-6 col-lg-7">
-
-                                            <nav class="mil-footer-menu mil-mb-60">
-                                                <ul>
-                                                    <li class="mil-up mil-active">
-                                                        <a href="home-1.html">Home</a>
-                                                    </li>
-                                                    <li class="mil-up">
-                                                        <a href="portfolio-1.html">Portfolio</a>
-                                                    </li>
-                                                    <li class="mil-up">
-                                                        <a href="services.html">Services</a>
-                                                    </li>
-                                                    <li class="mil-up">
-                                                        <a href="contact.html">Contato</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
+                                            <h4 class="mil-muted mil-up mil-mb-30">Nossos Horários</h4>
+                                            <p class="mil-light-soft mil-up">Segunda a Sexta: 08h30 às 12h00 e 14h00 às
+                                                17h30 <span class="mil-no-wrap">Sábado: 08h00 às 12h00</span></p>
 
                                         </div>
                                         <div class="col-md-6 col-lg-5">
@@ -1075,8 +1061,7 @@
                                                 </li>
                                                 <li><a href="#." class="mil-light-soft">Termos e Condições</a></li>
                                                 <li><a href="#." class="mil-light-soft">Políticas de Cookies</a></li>
-                                                <li><a href="https://energiavox.com.br/" class="mil-light-soft">Vox
-                                                        Energia</a></li>
+                                                <li><a href="https://energiavox.com.br/" class="mil-light-soft">Vox Energia</a></li>
                                             </ul>
 
                                         </div>
@@ -1091,18 +1076,16 @@
 
                                         <div class="col-md-6 col-lg-5 mil-mb-60">
 
-                                            <h6 class="mil-muted mil-up mil-mb-30">Nossos Horários</h6>
+                                            <h4 class="mil-muted mil-up mil-mb-30">Nossos Contatos</h4>
 
-                                            <p class="mil-light-soft mil-up">Segunda a Sexta: 08h30 às 12h00 e 14h00 às
-                                                17h30 <span class="mil-no-wrap">Sábado: 08h00 às 12h00</span></p>
+                                            <p class="mil-light-soft mil-up">(69) 3322-4898 <span
+                                                    class="mil-no-wrap">cadastro@coogd.com.br</span></p>
+                                    
 
                                         </div>
                                         <div class="col-md-6 col-lg-5 mil-mb-60">
 
-                                            <h6 class="mil-muted mil-up mil-mb-30">Nossos Contatos</h6>
-
-                                            <p class="mil-light-soft mil-up">(69) 3322-4898 <span
-                                                    class="mil-no-wrap">cadastro@coogd.com.br</span></p>
+                                        
 
                                         </div>
                                     </div>
@@ -1122,7 +1105,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <p class="mil-light-soft mil-up">© Copyright 2025 COOGD | Todos os direitos
+                                        <p class="mil-light-soft mil-up">© Copyright 2016 - 2026 <strong> COOGD </strong> | Todos os direitos
                                             reservados.</p>
                                     </div>
 

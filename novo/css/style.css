@@ -129,14 +129,14 @@ body {
 }
 .mil-stat-item {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 10px;
 }
 .mil-stat-number {
-  font-size: 86px;
+  font-size: 58px;
   line-height: 1;
   font-weight: 500;
   color: #000000;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 .mil-stats-counter .mil-stat-number {
   position: relative;
@@ -169,11 +169,11 @@ body {
 }
 
 @media screen and (max-width: 992px) {
-  .mil-stat-number { font-size: 64px; }
+  .mil-stat-number { font-size: 40px; }
   .mil-stats-counter .mil-stat-number::before { font-size: 0.72em; margin-right: 0.18rem; }
 }
 @media screen and (max-width: 576px) {
-  .mil-stat-number { font-size: 40px; }
+  .mil-stat-number { font-size: 28px; }
   .mil-stats-counter .mil-stat-number::before { font-size: 0.62em; margin-right: 0.12rem; }
 }
 
